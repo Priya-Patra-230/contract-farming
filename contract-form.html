@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Form</title>
+</head>
+<body>
+  
+  <form id="contractForm">
+    <h1>Contract Form</h1>
+    
+    <div class="form-section">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
+    
+    <div class="form-section">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
+    </div>
+    
+    <div class="form-section">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    </div>
+    
+    <div class="form-section">
+        <label for="signature">Signature</label>
+        <input type="text" id="signature" name="signature" placeholder="Enter your signature" required>
+    </div>
+    
+    <div class="form-section">
+        <label for="quantity">Quantity</label>
+        <input type="text" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+    </div>
+    
+    
+    <div class="form-section">
+        <label for="aadhar">Upload Aadhaar Card</label>
+        <input type="file" id="aadhar" name="aadhar" accept=".jpg, .jpeg, .png, .pdf" required>
+    </div>
+
+    
+    <div class="form-section">
+        <input type="checkbox" id="termsCheckbox" name="terms">
+        <label for="termsCheckbox">I agree to the <a href="https://www.privacypolicyonline.com/terms-conditions-generator/" target="_blank">terms and conditions</a>.</label>
+    </div>
+
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <style>
+    body {
+      background-color: rgb(233, 228, 239);
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    form h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input[type="text"], input[type="tel"], textarea, input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button[type="submit"] {
+      background-color: #4285F4;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #357ae8;
+    }
+
+    .form-section {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 15px;
+      }
+
+      button[type="submit"] {
+        padding: 12px;
+      }
+    }
+  </style>
+
+  <script>
+    document.getElementById('contractForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      
+      const termsAccepted = document.getElementById('termsCheckbox').checked;
+      
+      if (!termsAccepted) {
+        alert("Please accept the terms and conditions before submitting.");
+        return; 
+      }
+
+      
+      window.location.href = './payment-form.html'; 
+    });
+  </script>
+
+</body>
+</html>

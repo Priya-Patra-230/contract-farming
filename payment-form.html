@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+</head>
+<body>
+
+<div class="payment-container" >
+  <h2>Payment Details</h2>
+  <form id="payment-form">
+
+  <label for="name">Full Name</label>
+  <input type="text" id="name" placeholder="Enter your name" required>
+  
+  <label for="email">Email Address</label>
+  <input type="email" id="email" placeholder="Enter your email" required>
+  
+  <label for="card-number">Card Number</label>
+  <input type="text" id="card-number" class="card-number" placeholder="1234 5678 9012 3456" required>
+  
+  <label for="expiry-date">Expiry Date</label>
+  <input type="text" id="expiry-date" placeholder="MM/YY" required>
+  
+  <label for="cvv">CVV</label>
+  <input type="number" id="cvv" placeholder="123" required>
+  
+  <div class="card-icons">
+      <img src="visa.png" alt="Visa">
+      <img src="master_card.png" alt="Mastercard">
+      <img src="amex-removebg-preview.png" alt="Amex">
+  </div>
+  
+  <small>Your card information is securely encrypted.</small>
+  
+  <div class="scanner">
+      <p>Scan the QR code to pay</p>
+      <img src="phonepe.jpg" alt="QR Code">
+  </div>
+  
+  <button type="submit">Make Payment</button>
+
+  </div>
+</form>
+
+
+<style>
+  body{
+    background-color: rgb(231, 225, 236);
+   }
+
+.payment-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.payment-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.payment-container label {
+  font-size: 14px;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.payment-container input[type="text"], 
+.payment-container input[type="email"], 
+.payment-container input[type="tel"],
+.payment-container input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+
+.payment-container input[type="text"].card-number {
+  letter-spacing: 1.5px;
+}
+
+
+.payment-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-container button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+
+.payment-container .card-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.payment-container .card-icons img {
+  width: 50px;
+  height: auto;
+}
+
+
+.payment-container small {
+  color: #777;
+  font-size: 12px;
+  display: block;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+
+
+.payment-container .scanner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.payment-container .scanner img {
+  width: 150px;
+  height: auto;
+}
+
+
+@media (max-width: 600px) {
+  .payment-container {
+      padding: 15px;
+  }
+
+  .payment-container h2 {
+      font-size: 22px;
+  }
+
+  .payment-container input {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  .payment-container button {
+      font-size: 16px;
+  }
+}
+
+
+</style>
+
+
+<script>
+  const paymentForm = document.getElementById('payment-form');
+
+  paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = './final.html'; 
+  });
+</script>
+
+</body>
+</html>
+
+
+
